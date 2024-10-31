@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input {
+    width: 377px;
+    height: 60px;
+}
+
+ .button { 
+    text-align: center; 
+    font-size: 26px; 
+    text-transform: uppercase; 
+    box-shadow: 0 30px 14px rgba(0, 0, 0, 0.2); /* Тень под кнопкой */
+}
+
+
+.button a {
+    background-color: #FF8012;
+    padding: 23px 93px 23px 96px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: normal;
+    font-weight: bold;
+}
+
+#open_popup:hover {
+    background-color: orange; 
+} 
+
+.popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: transparent ;
+    z-index: 2;
+    transform: translateY(0) scale(0);
+    transition: .4s ease-in-out;
+}
+
+.popup.active {
+    display: flex;
+    transform: translateY(0%) scale(100%);
+    background-color: #AEAEAE;
+
+}
+
+.popup_container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.popup_body {
+    margin: auto;
+    width: 580px;
+    height: 530px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 40px 15px 118px 15px;
+    position: relative;
+}
+
+.popup_body p {
+    font-size: 34px;
+    color: orange;
+}
+
+.popup_body input {
+    display: block;
+    margin: 20px 101px;
+    width: 330px;
+    height: 60px;
+    padding: 19px 0 19px 55px;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    border: none;
+    font-weight: 500;
+    font-size: 16px;
+    color: #89909f;
+}
+.input_icon_name, .input_icon_number, .input_icon_email {
+    position: relative;
+    margin: 193px 0 19px 71px;
+    padding-left: 40px;
+    color: #9094A6; /* Цвет текста по умолчанию */
+    transition: color 0.3s; /* Плавный переход цвета */
+}
+
+.input_icon_name {
+    background: url('./img/name.svg') no-repeat 10px center;
+}
+
+.input_icon_number {
+    background: url('./img/number.svg') no-repeat 10px center;
+}
+
+.input_icon_email {
+    background: url('./img/email.svg') no-repeat 10px center;
+}
+
+/* Изменение цвета фона иконки при вводе данных */
+.input_icon_name:not(:placeholder-shown) {
+    background: url('./img/name_black.svg') no-repeat 10px center; /* Замените на путь к черной иконке */
+}
+
+.input_icon_number:not(:placeholder-shown) {
+    background: url('./img/number_black.svg') no-repeat 10px center; /* Замените на путь к черной иконке */
+}
+
+.input_icon_email:not(:placeholder-shown) {
+    background: url('./img/email_black.svg') no-repeat 10px center; /* Замените на путь к черной иконке */
+}
+
+/* Цвет текста при фокусе или вводе данных */
+.input_icon_name:focus,
+.input_icon_number:focus,
+.input_icon_email:focus,
+.input_icon_name:not(:placeholder-shown),
+.input_icon_number:not(:placeholder-shown),
+.input_icon_email:not(:placeholder-shown) {
+    color: black; /* Цвет текста при вводе */
+}
+.popup_body input:focus {
+    outline: none;
+}
+
+.popup_body button {
+    cursor: pointer;
+    display: block;
+    width: 330px;
+    margin: 20px 100px;
+    padding: 20px 0px;
+    font-weight: 500;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #FF8012;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.popup_body button:hover {
+    background-color: orange;
+}
+
+.popup_text p {
+    font-size: 16px;
+    color: #4C4F5B;
+    padding: 20px 100px 0;
+}
+
+.popup_close {
+    position: absolute; /* Позволяет позиционировать элемент относительно родителя */
+    top: 20px; /* Отступ сверху */
+    right: 20px; /* Отступ справа */
+    cursor: pointer; /* Курсор в виде указателя */
+}
+
+.popup_close_btn {
+    width: 32px; /* Ширина кнопки */
+    height: 32px; /* Высота кнопки */
+    transition: transform 0.3s ease; /* Плавный переход для эффекта наведения */
+}
+
+.popup_close:hover .popup_close_btn {
+    transform: scale(1.1); /* Увеличение кнопки при наведении */
+}
